@@ -253,28 +253,33 @@ body {
 }
 
 .left-image {
-  position: relative;
-  padding: 20px;
+    position: relative;
+    padding: 20px;
 }
 
 .left-image img {
-  max-width: 100%;
-  border-radius: 12px;;
-  display: block;
+    max-width: 100%;
+    border-radius: 12px;
+    ;
+    display: block;
 }
 
 /* Text Overlay */
 .image-overlay-text {
-  position: absolute;
-  top: 40%;  /* center vertically */
-  left: 50%; /* center horizontally */
-  transform: translate(-50%, -50%);
-  color: #22c4b4;
-  font-size: 4rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-shadow: 0 4px 12px rgba(0,0,0,0.6); /* makes text visible */
-  pointer-events: none; /* ensures image is still clickable if needed */
+    position: absolute;
+    top: 40%;
+    /* center vertically */
+    left: 50%;
+    /* center horizontally */
+    transform: translate(-50%, -50%);
+    color: #22c4b4;
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    /* makes text visible */
+    pointer-events: none;
+    /* ensures image is still clickable if needed */
 }
 
 /* Right section */
@@ -515,12 +520,53 @@ body {
     margin-bottom: 1rem;
 }
 
+.calendar-month {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .calendar-month {
+        padding: 0 3rem;
+        flex-direction: row;
+        /* side by side */
+    }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+    .calendar-month {
+        padding: 0 9rem;
+    }
+}
+
 .calendar-month h1 {
-    text-align: center;
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 10px;
     color: #1da69a;
+}
+
+/* --- Mobile layout --- */
+@media (max-width: 767px) {
+    .calendar-month {
+        flex-direction: column;
+        /* stack items */
+        text-align: center;
+        /* center both h1 and p */
+    }
+
+    .calendar-month h1 {
+        margin-bottom: 0.5rem;
+        /* spacing between h1 and p */
+    }
+
+    .calendar-month p {
+        margin-bottom: 15px;
+    }
 }
 
 .calendar-header h1 {
